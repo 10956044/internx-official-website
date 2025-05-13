@@ -820,8 +820,7 @@ footer {
 
 /* RWD 響應式設計 */
 @media (max-width: 1024px) {
-    .pain-points-grid,
-    .achievements-grid {
+    .pain-points-grid {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -897,6 +896,11 @@ footer {
 
     .line {
         opacity: 0.5;
+    }
+
+    .pain-points-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
     }
 }
 
