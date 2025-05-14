@@ -1129,4 +1129,131 @@ footer {
         height: 120px;
         background-size: 20px 20px;
     }
+}
+
+/* 服務區塊樣式 */
+.student-services,
+.enterprise-service {
+    margin: 4rem 0;
+}
+
+.section-subtitle {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 2rem;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding: 0 0.5em;
+}
+
+.section-subtitle::before {
+    content: '';
+    position: absolute;
+    left: -0.5em;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(100% + 1em);
+    height: 0.6em;
+    background-color: var(--primary-color);
+    z-index: -1;
+    border-radius: 4px;
+}
+
+/* 學生服務區塊標題特殊樣式 */
+.student-services .section-subtitle::before {
+    background-color: var(--secondary-color);
+}
+
+/* 企業服務區塊標題特殊樣式 */
+.enterprise-service .section-subtitle::before {
+    background-color: var(--primary-color);
+}
+
+/* 確保標題容器置中 */
+.student-services,
+.enterprise-service {
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.service-card {
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-5px);
+}
+
+.service-image {
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+.service-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-image img {
+    transform: scale(1.05);
+}
+
+.service-content {
+    padding: 1.5rem;
+}
+
+.service-content h4 {
+    font-size: 1.4rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.service-content p {
+    color: #666;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* 企業服務卡片特殊樣式 */
+.enterprise-service .service-card {
+    max-width: 100%;
+    margin: 0;
+}
+
+.enterprise-service .service-image {
+    height: 250px;
+}
+
+.enterprise-grid {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 1024px) {
+    .enterprise-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .enterprise-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .enterprise-service .service-card {
+        max-width: 100%;
+    }
 } 
